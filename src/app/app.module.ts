@@ -16,7 +16,8 @@ import { ComoUsarComponent } from './oferta/como-usar/como-usar.component';
 import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import { FormsModule } from '@angular/forms'
+//import { FormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
 
 //pipe
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
@@ -41,7 +42,7 @@ import { OrdemCompraSucessoComponent } from './ordem-compra-sucesso/ordem-compra
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [ { provide: LOCALE_ID, useValue: 'pt-BR' } ],
