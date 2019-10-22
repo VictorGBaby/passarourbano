@@ -213,6 +213,20 @@
       "complemento": "teste a",
       "formaPagamento": "debito",
       "id": 4
+    },
+    {
+      "endereco": "Rua dos monstros",
+      "numero": "666",
+      "complemento": "Casa da morte",
+      "formaPagamento": "dinheiro",
+      "id": 5
+    },
+    {
+      "endereco": "Rua teste",
+      "numero": "1",
+      "complemento": "201",
+      "formaPagamento": "debito",
+      "id": 6
     }
   ]
 }
