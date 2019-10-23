@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Oferta } from '../shared/oferta.model';
 import { OfertasService } from '../ofertas.service';
+import { CarrinhoService } from '../carrinho.service';
 
 @Component({
   selector: 'app-oferta',
@@ -13,9 +14,11 @@ export class OfertaComponent implements OnInit, OnDestroy {
 
   public oferta: Oferta
 
-  constructor(private route: ActivatedRoute, private ofertasService: OfertasService) { }
+  constructor(private route: ActivatedRoute, private ofertasService: OfertasService, private carrinhoService: CarrinhoService) { }
 
   ngOnInit() {
+
+    this.carrinhoService.exibirItens()
 
     this.route.params.subscribe((parametros: Params) => {
 
@@ -24,8 +27,6 @@ export class OfertaComponent implements OnInit, OnDestroy {
           this.oferta = oferta
         })
     })
-
-
 
     /*   SUBSCRIBE EXAMPLE
     this.route.params.subscribe(
@@ -66,6 +67,10 @@ export class OfertaComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
 
+  }
+
+  adicionarItemCarrinho(oferta: Oferta): void {
+    this.carrinhoService.incluirItem(this.oferta)
   }
 
 }
